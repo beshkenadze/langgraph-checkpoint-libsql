@@ -1,5 +1,5 @@
 {
-  "name": "@langchain/langgraph-checkpoint-libsql",
+  "name": "@beshkenadze/langgraph-checkpoint-libsql",
   "version": "1.0.0",
   "description": "LangGraph checkpoint saver backed by LibSQL (Turso)",
   "type": "module",

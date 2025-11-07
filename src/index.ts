@@ -11,7 +11,7 @@ import {
   type SerializerProtocol,
   TASKS,
 } from "@langchain/langgraph-checkpoint";
-import { type Client, type Row, createClient } from "@libsql/client";
+import { type Client, createClient, type Row } from "@libsql/client";
 
 interface CheckpointRow extends Row {
   checkpoint: string | ArrayBuffer;
@@ -334,7 +334,8 @@ CREATE TABLE IF NOT EXISTS writes (
     sql += "\nORDER BY checkpoint_id DESC";
 
     if (limit) {
-      const limitNum = typeof limit === "string" ? Number.parseInt(limit, 10) : limit;
+      const limitNum =
+        typeof limit === "string" ? Number.parseInt(limit, 10) : limit;
       sql += ` LIMIT ${limitNum}`;
     }
 

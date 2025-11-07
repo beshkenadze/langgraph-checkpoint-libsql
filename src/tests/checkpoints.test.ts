@@ -1,12 +1,12 @@
-import { describe, it, expect } from "vitest";
+import type { RunnableConfig } from "@langchain/core/runnables";
 import {
-  Checkpoint,
-  CheckpointTuple,
+  type Checkpoint,
+  type CheckpointTuple,
   emptyCheckpoint,
   TASKS,
   uuid6,
 } from "@langchain/langgraph-checkpoint";
-import type { RunnableConfig } from "@langchain/core/runnables";
+import { describe, expect, it } from "vitest";
 import { SqliteSaver } from "../index.js";
 
 const checkpoint1: Checkpoint = {

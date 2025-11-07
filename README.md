@@ -1,4 +1,4 @@
-# @langchain/langgraph-checkpoint-libsql
+# @beshkenadze/langgraph-checkpoint-libsql
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -14,11 +14,11 @@ A drop-in replacement for `@langchain/langgraph-checkpoint-sqlite` that uses [Li
 ## Installation
 
 ```bash
-npm install @langchain/langgraph-checkpoint-libsql
+npm install @beshkenadze/langgraph-checkpoint-libsql
 # or
-bun add @langchain/langgraph-checkpoint-libsql
+bun add @beshkenadze/langgraph-checkpoint-libsql
 # or
-yarn add @langchain/langgraph-checkpoint-libsql
+yarn add @beshkenadze/langgraph-checkpoint-libsql
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ yarn add @langchain/langgraph-checkpoint-libsql
 ### Local File Database
 
 ```typescript
-import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
+import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 
 // Local SQLite file
 const checkpointer = SqliteSaver.fromConnString("file:checkpoints.db");
@@ -35,7 +35,7 @@ const checkpointer = SqliteSaver.fromConnString("file:checkpoints.db");
 ### In-Memory Database
 
 ```typescript
-import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
+import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 
 // In-memory database (perfect for testing)
 const checkpointer = SqliteSaver.fromConnString(":memory:");
@@ -44,7 +44,7 @@ const checkpointer = SqliteSaver.fromConnString(":memory:");
 ### Remote Turso Database
 
 ```typescript
-import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
+import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 import { createClient } from "@libsql/client";
 
 // Remote Turso database
@@ -59,7 +59,7 @@ const checkpointer = new SqliteSaver(client);
 ### Embedded Replica (Offline-First)
 
 ```typescript
-import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
+import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 import { createClient } from "@libsql/client";
 
 // Embedded replica with automatic sync
@@ -76,7 +76,7 @@ const checkpointer = new SqliteSaver(client);
 ## Integration with LangGraph
 
 ```typescript
-import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
+import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 import { StateGraph } from "@langchain/langgraph";
 
 const checkpointer = SqliteSaver.fromConnString("file:checkpoints.db");
@@ -133,7 +133,7 @@ Simply replace the import and you're done:
 
 ```diff
 - import { SqliteSaver } from "@langchain/langgraph-checkpoint-sqlite";
-+ import { SqliteSaver } from "@langchain/langgraph-checkpoint-libsql";
++ import { SqliteSaver } from "@beshkenadze/langgraph-checkpoint-libsql";
 
   const checkpointer = SqliteSaver.fromConnString("file:checkpoints.db");
 ```
