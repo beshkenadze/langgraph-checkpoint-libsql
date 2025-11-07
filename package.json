@@ -1,0 +1,55 @@
+{
+  "name": "@langchain/langgraph-checkpoint-libsql",
+  "version": "1.0.0",
+  "description": "LangGraph checkpoint saver backed by LibSQL (Turso)",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:beshkenadze/langgraph-checkpoint-libsql.git"
+  },
+  "keywords": [
+    "langchain",
+    "langgraph",
+    "checkpoint",
+    "libsql",
+    "turso",
+    "sqlite",
+    "database"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist/",
+    "lint": "biome check src/",
+    "lint:fix": "biome check --write src/",
+    "format": "biome format --write src/",
+    "format:check": "biome format src/",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "prepublishOnly": "bun run clean && bun run build"
+  },
+  "author": "Aleksandr Beshkenadze <beshkenadze@gmail.com> (LibSQL port)",
+  "license": "MIT",
+  "peerDependencies": {
+    "@langchain/core": "^1.0.1",
+    "@langchain/langgraph-checkpoint": "^1.0.0"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@libsql/client": "^0.15.15"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.4",
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}
