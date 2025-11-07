@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git@github.com:beshkenadze/langgraph-checkpoint-libsql.git"
+    "url": "git+ssh://git@github.com/beshkenadze/langgraph-checkpoint-libsql.git"
   },
   "keywords": [
     "langchain",
